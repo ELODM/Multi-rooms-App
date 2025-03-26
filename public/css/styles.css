@@ -1,0 +1,346 @@
+@font-face {
+  font-family: "persian01";
+  src: url("https://example.com/fonts/IH-Pe.eot");
+  src: url("https://example.com/fonts/IH-Pe.eot?#iefix") format("embedded-opentype"),
+    url("https://example.com/fonts/IH-Pe.woff2") format("woff2"),
+    url("https://example.com/fonts/IH-Pe.woff") format("woff"),
+    url("https://example.com/fonts/IH-Pe.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "persian02";
+  src: url("https://example.com/fonts/BYekan-webfont.eot") format("eot"),
+    url("https://example.com/fonts/BYekan-webfont.woff") format("woff"),
+    url("https://example.com/fonts/BYekan-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Styles généraux */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Conteneur principal */
+.container-fluid {
+  width: 90%;
+  max-width: 1200px; /* Largeur maximale élargie */
+  margin: 0 auto;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Conteneur du formulaire */
+.form-signin {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  background-color: white;
+  border-radius: 20px;  /* Arrondi plus prononcé */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Titre */
+.form-signin h1 {
+  color: #0056b3;  /* Couleur principale bleue */
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* Champs de formulaire */
+.form-control {
+  height: 45px;
+  border-radius: 10px;
+  border: 1px solid #ced4da;
+  padding: 10px 15px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  transition: all 0.3s;
+}
+
+.form-control:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 0 0.2rem rgba(0, 86, 179, 0.25);
+}
+
+/* Sélecteur de salle (si utilisé) */
+#chatrooms {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ced4da;
+  background-color: white;
+  color: #003f7f; /* Bleu foncé */
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+#chatrooms:focus {
+  outline: none;
+  border-color: #0056b3;
+}
+
+/* Nouveau style pour les boutons */
+.btn-primary,
+#chatForm .btn-primary,
+#online-users-list button {
+  background: linear-gradient(45deg, #6a11cb, #2575fc); /* Dégradé moderne */
+  border: none;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 50px; /* Forme pill */
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: inline-block;
+  text-align: center;
+  margin: 20px auto; /* Centrage horizontal et espacement vertical */
+}
+
+/* Positionnement spécifique dans le formulaire d'inscription */
+.form-signin .btn-primary {
+  width: auto;  /* Retirer la largeur à 100% pour centrer le bouton */
+}
+
+/* Positionnement dans le formulaire de chat */
+#chatForm {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+  justify-content: center;
+}
+
+#chatForm .input-group {
+  display: flex;
+  flex: 1;
+}
+
+#messageInput {
+  flex: 1;
+  border-radius: 20px 0 0 20px;
+  padding: 12px 20px;
+  border: 1px solid #ced4da;
+}
+
+#chatForm .btn-primary {
+  border-radius: 0 20px 20px 0;
+  padding: 12px 20px;
+  margin-left: 10px;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Hover et active pour les boutons */
+.btn-primary:hover,
+#chatForm .btn-primary:hover,
+#online-users-list button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}
+
+.btn-primary:active,
+#chatForm .btn-primary:active,
+#online-users-list button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Étiquettes */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #003f7f;
+}
+
+/* Style pour le groupe d'options */
+optgroup {
+  font-style: normal;
+  font-weight: bold;
+  color: #003f7f;
+}
+
+option {
+  padding: 5px;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .form-signin {
+    padding: 20px;
+    margin: 20px;
+    width: 90%;
+  }
+  
+  .form-signin h1 {
+    font-size: 1.5rem;
+  }
+  
+  .btn-primary,
+  #chatForm .btn-primary,
+  #online-users-list button {
+    padding: 10px 20px;
+    margin: 15px auto;
+  }
+}
+
+/* Zone des utilisateurs en ligne */
+#online-users-list {
+  position: fixed;
+  display: flex;
+  gap: 5px;
+  padding: 10px;
+  margin-left: 100px;
+  justify-content: center;
+  flex-wrap: wrap;
+  z-index: 1000;
+  background-color: #ffffff;
+  width: 72%;
+  list-style-type: none;
+}
+
+/* Conteneur du chat */
+#chatContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 70%;
+  padding: 20px;
+  margin-top: 50px;
+  margin-bottom: 60px;
+  margin-left: 100px;
+  background-color: #eef5fb;  /* Fond légèrement bleuté */
+  border-radius: 8px;
+  height: 84%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Boîte de messages */
+#chat-box {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+/* Messages */
+.message {
+  padding: 12px 16px;
+  border-radius: 18px;
+  max-width: 80%;
+  position: relative;
+  word-wrap: break-word;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.message-right {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #0056b3 0%, #0056b3 100%);
+  color: white;
+  border: 1px solid #0056b3;
+}
+
+.message-left {
+  align-self: flex-start;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 1px solid #dee2e6;
+  color: #212529;
+}
+
+/* Info message (nom, heure) */
+.message-info {
+  font-size: 0.8em;
+  margin-bottom: 5px;
+  color: #6c757d;
+  display: flex;
+  justify-content: space-between;
+}
+
+.message-right .message-info {
+  color: rgba(255,255,255,0.8);
+  justify-content: flex-end;
+}
+
+.message-content {
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/* Bulle triangulaire pour les messages */
+.message-left::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 12px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 8px solid #e9ecef;
+}
+
+.message-right::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: 12px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid #0056b3;
+}
+
+/* Animation pour les nouveaux messages */
+@keyframes messageAppear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message {
+  animation: messageAppear 0.3s ease-out;
+}
+
+/* Responsive pour petits écrans dans le chat */
+@media (max-width: 768px) {
+  .container-fluid {
+    width: 95%;
+  }
+  
+  .message {
+    max-width: 85%;
+  }
+}
